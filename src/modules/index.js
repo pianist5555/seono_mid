@@ -6,5 +6,5 @@ const rootReducer = combineReducers({
     counter,
     sample
 });
-
+ 
 export default rootReducer;

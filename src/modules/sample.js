@@ -22,13 +22,31 @@ export const getPost = id => async dispatch => {
     }); // 요청 성공
   } catch (e) {
     dispatch({
-      type: GET_USERS_FAILURE,
+      type: GET_POST_FAILURE,
       payload: e,
       error: true
     }); // 에러 발생
     throw e; // 나중에 컴포넌트에서 에러를 조회할 수 있게 해줌
   }
 };
+
+export const getUsers = id => async dispatch => {
+    dispatch({ type: GET_USERS });
+    try {
+      const response = await api.getusers(id);
+      dispatch({
+        type: GET_USERS_SUCCESS,
+        payload: response.data
+      }); // 요청 성공
+    } catch (e) {
+      dispatch({
+        type: GET_USERS_FAILURE,
+        payload: e,
+        error: true
+      }); // 에러 발생
+      throw e; // 나중에 컴포넌트에서 에러를 조회할 수 있게 해줌
+    }
+  };
 
 // 초기 상태 선언, 요청의 로딩 중 상태는 loading 이라는 객체에서 관리
 

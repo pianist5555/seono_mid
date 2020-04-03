@@ -28,13 +28,13 @@ const SampleContainer = ({
 };
 
 export default connect(
-    ({ sample }) => ({
+    ({ sample }) => ({ // 스토어에 있는 상태들을 가지고 옴
         post: sample.post,
         users: sample.users,
         loadingPost: sample.loading.GET_POST,
         loadingUsers: sample.loading.GET_USERS
     }),
-    {
+    {   // 스토어에 있는 객체(thunk로 함수)들을 가지고 옴       
         getPost,
         getUsers
     }

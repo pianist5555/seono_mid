@@ -39,7 +39,7 @@ export const getUsers = id => async dispatch => {
     dispatch({
       type: GET_USERS_SUCCESS,
       payload: response.data
-    }); // 요청 성공.
+    }); // 요청 성공
   } catch (e) {
     dispatch({
       type: GET_USERS_FAILURE,
